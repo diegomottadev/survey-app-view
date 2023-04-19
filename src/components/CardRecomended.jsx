@@ -84,6 +84,7 @@ export default function CardRecomended(props) {
                 </div>
               </MDBCardFooter>
             </form>
+            
           </MDBCard>
         </MDBCol>
       </MDBRow>
