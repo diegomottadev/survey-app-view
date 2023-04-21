@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# Installation Guide
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+To run the React application on your computer, you'll need to install Node.js and a Node.js package manager like npm or Yarn. Then, you can follow these steps to set up your development environment:
 
-In the project directory, you can run:
+  1 - Clone the project:
 
-### `npm start`
+    git clone https://github.com/diegomottadev/survey-app-view.git
+  
+  2 - Install dependencies:
+    
+    npm install
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+  3 - Create a .env file with the following content and add the next lines:
+    
+    PORT=3000
+    QR_SITE_URL='https://xample.com/'
+    
+  The `QR_SITE_URL` variable will contain the URL of your site and will be used when generating QR codes for point of sale locations.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  Each client has a point of sale code, which is a number. When a new point of sale is created, its code is associated with the URL of the site, for example:
 
-### `npm test`
+    https://example.com/44
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  This URL will serve as the access point from the QR code, and will redirect to the appropriate form when scanned.
+  
+  4 - Create a `.env` file in the root directory of the project, and add the following line:
 
-### `npm run build`
+    PORT=3001
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  5 - With these steps completed, you should now be able to run the application by running:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    npm start
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  This should start the application on your local server at http://localhost:3001.
