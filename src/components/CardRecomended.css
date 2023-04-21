@@ -1,0 +1,12 @@
+.form-check-input[type=radio]:checked:after {
+    border-radius: 50%;
+    width: 0.625rem;
+    height: 0.625rem;
+    border-color: #8C6DEF !important;
+    background-color: #8C6DEF !important;
+    transition: border-color;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    left: 50%;
+    top: 50%;
+}

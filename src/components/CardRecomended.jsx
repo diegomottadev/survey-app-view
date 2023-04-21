@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import {
   MDBBtn,
   MDBCard,
@@ -6,30 +6,68 @@ import {
   MDBCardFooter,
   MDBCol,
   MDBContainer,
-  MDBIcon,
   MDBInput,
   MDBRow,
 } from "mdb-react-ui-kit";
 
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import { BASE_URL } from "../helpers/BaseUrl";
+import { useNavigate } from 'react-router-dom';
+import SurveysService from "../services/SurveysService";
 
 export default function CardRecomended(props) {
   const IMAGE_API_BASE_URL = `${BASE_URL}/images`;
+  const navigate = useNavigate();
+
+
+  const [name,setName] = useState(null)
+  const [telephone,setTelephone] = useState(null)
 
   const {
     state: { surveyCreated, product },
   } = useLocation();
 
-  console.log("image", product);
+  const handleChangeName = (name) => {
+    setName(name)
+  };
+
+  const handleChangeTelephone = (telephone) => {
+    setTelephone(telephone)
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+
+
+
+    try {
+
+        const body = {name: name, telephone: telephone}
+
+      
+        await SurveysService.update(surveyCreated.id,body);
+        
+        setName(null);
+        setTelephone(null);
+        navigate('/end');
+
+
+    } catch (error) {
+      
+
+      console.error(error)
+    
+    }
+};
+
 
   return (
     <MDBContainer>
       <MDBRow className="justify-content-center">
         <MDBCol size="12">
           <MDBCard>
-            <form className="" action="">
-              <MDBCardBody>
+          <form  onSubmit={handleSubmit} className="" action="">
+            <MDBCardBody>
                 {/* <div className="text-center">
                   <MDBIcon far icon="file-alt mb-3 text-primary" size="4x" />
                 </div>
@@ -68,6 +106,8 @@ export default function CardRecomended(props) {
                     id="formControlLg"
                     type="text"
                     size="lg"
+                    onChange={(e) => handleChangeName(e.target.value)}
+
                   />
                   <br />
                   <MDBInput
@@ -75,12 +115,14 @@ export default function CardRecomended(props) {
                     id="formControlLg"
                     type="number"
                     size="lg"
+                    onChange={(e) => handleChangeTelephone(e.target.value)}
+
                   />
                   </div>
               </MDBCardBody>
               <MDBCardFooter>
                 <div className="text-end">
-                  <MDBBtn type="submit">Aceptar</MDBBtn>
+                  <MDBBtn type="submit">Finalizar</MDBBtn>
                 </div>
               </MDBCardFooter>
             </form>

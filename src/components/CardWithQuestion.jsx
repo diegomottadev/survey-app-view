@@ -9,7 +9,6 @@ import {
   MDBIcon,
   MDBRadio,
   MDBRow,
-  MDBTextArea,
 } from "mdb-react-ui-kit";
 import PetsService from "../services/PetsService";
 import AgesService from "../services/AgesService";
@@ -19,13 +18,12 @@ import Swal from 'sweetalert2'
 import SurveysService from "../services/SurveysService";
 import FormsService from "../services/FormsService";
 import { useNavigate, useParams } from 'react-router-dom';
-
+import './CardRecomended.css'
 export default function CardWithQuestion() {
 
 
   const navigate = useNavigate();
   const { id } = useParams();
-  console.log(id)
   const [pets,setPets] = useState([])
   const [sizes,setSizes] = useState([])
   const [ages,setAges] = useState([])
@@ -36,7 +34,7 @@ export default function CardWithQuestion() {
   const [size,setSize] = useState(1)
   const [age,setAge] = useState(1)
   const [necessity,setNecessity] = useState(1)
-  const [product,setProduct] = useState(1)
+  // const [product,setProduct] = useState(1)
 
   const [petName,setPetName] = useState('Perro')
   const [sizeName,setSizeName] = useState(null)
@@ -49,9 +47,8 @@ export default function CardWithQuestion() {
 
         try {
             const {data:{data:result}} =  await PetsService.all()
-           
             setPets(result);
-           // });
+          
         } catch (err){
             console.log(err);
             console.warn('Hubo un problema con la carga del listado de mascotas');
@@ -66,7 +63,7 @@ useEffect(() => {
   async function loadAges() {
     try {
       const { data: { data: result } } = await AgesService.all(pet)
-      console.log(result);
+
       setAges(result);
     } catch (err) {
       console.log(err);
@@ -155,7 +152,6 @@ useEffect(() => {
         let {data:{data:responseForm}} = await FormsService.get(dataGet);
 
         let producRecommended = {name: responseForm.answer, image_id:responseForm.image_id}
-        setProduct(producRecommended)
 
         const dataPost = {
             "pet":petName,
@@ -168,8 +164,6 @@ useEffect(() => {
         
 
         let {data:{data:response}} = await SurveysService.create(dataPost);
-        console.log(response)
-
         
         setPet(1);
         setSize(1);
@@ -203,6 +197,11 @@ useEffect(() => {
     return <div>Cargando...</div>
   }
 
+
+  if(!id){
+    navigate('/');
+  }
+
   return (
     <MDBContainer>
       <MDBRow className="justify-content-center">
@@ -212,13 +211,12 @@ useEffect(() => {
 
             <MDBCardBody>
               <div className="text-center">
-                <MDBIcon far icon="file-alt mb-3 text-primary" size="4x" />
+                <MDBIcon far icon="file-alt mb-3 text-primary" size="4x"  style={{color: '#8C6DEF'}}/>
+                
                 <p>
-                  <strong>Your opinion matters</strong>
-                </p>
-                <p>
-                  Have some ideas how to improve our product?
-                  <strong>Give us your feedback.</strong>
+                Te guiamos para que encuentres el producto ideal para tu mascota 😊
+
+                 
                 </p>
               </div>
 
@@ -238,6 +236,7 @@ useEffect(() => {
                   className="mb-2"
                   defaultChecked={pet.name === 'Perro'}
                   onChange={() =>handleChangePet(pet.id,pet.name)}
+                  style={{borderColor: '#8C6DEF'}}
                   />
               ))}
               <p className="text-center">
@@ -251,6 +250,7 @@ useEffect(() => {
                   label={age.name}
                   className="mb-2"
                   onChange={() => handleChangeAge(age.id,age.name)}
+                  style={{borderColor: '#8C6DEF'}}
                 />
               ))}
               {sizes.length > 0 &&
@@ -266,6 +266,7 @@ useEffect(() => {
                   label={size.name}
                   className="mb-2"
                   onChange={() => handleChangeSize(size.id,size.name)}
+                  style={{borderColor: '#8C6DEF'}}
                 />
               ))}
               <p className="text-center">
@@ -279,7 +280,7 @@ useEffect(() => {
                   label={necessity.name}
                   className="mb-2"
                   onChange={() => { handleChangeNecessity(necessity.id,necessity.name);}}
-
+                  style={{borderColor: '#8C6DEF'}}
                 />
               ))}
                
@@ -291,7 +292,7 @@ useEffect(() => {
             </MDBCardBody>
             <MDBCardFooter>
               <div className="text-end">
-                <MDBBtn type="submit">Siguiente</MDBBtn>
+                <MDBBtn style={{borderColor: '#8C6DEF',backgroundColor: '#8C6DEF',boxShadow: '0 4px 9px -4px #8C6DEF'}} type="submit">Siguiente</MDBBtn>
               </div>
             </MDBCardFooter>
             </form>
