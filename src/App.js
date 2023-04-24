@@ -12,7 +12,7 @@ function App() {
 
     <Router>
       <Routes>
-        <Route path="/:id" element={<CardWithQuestion />} />
+        <Route path="/:code" element={<CardWithQuestion />} />
         <Route path="/product" element={<CardRecomended />} />
         <Route path="/end" element={<EndSurvey/>} />
         <Route path="/" element={<PageNotExist/>} />

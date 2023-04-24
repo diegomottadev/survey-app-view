@@ -90,9 +90,9 @@ export default function CardRecomended(props) {
                 </h3>
                 <div>
                 <img
-                  src={`${IMAGE_API_BASE_URL}/${product.image_id}`}
+                  src={`${IMAGE_API_BASE_URL}/${product.image_name}`}
                   className="img-fluid hover-shadow mx-auto d-block"
-                  alt="image_id"
+                  alt="image_name"
                 />
                 </div>
                 <div style={{ position: "relative", margin: "0 auto" }}>
@@ -122,7 +122,7 @@ export default function CardRecomended(props) {
               </MDBCardBody>
               <MDBCardFooter>
                 <div className="text-end">
-                  <MDBBtn type="submit">Finalizar</MDBBtn>
+                  <MDBBtn style={{borderColor: '#8C6DEF',backgroundColor: '#8C6DEF',boxShadow: '0 4px 9px -4px #8C6DEF'}} type="submit">Finalizar</MDBBtn>
                 </div>
               </MDBCardFooter>
             </form>

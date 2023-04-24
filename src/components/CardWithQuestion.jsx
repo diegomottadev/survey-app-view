@@ -23,7 +23,7 @@ export default function CardWithQuestion() {
 
 
   const navigate = useNavigate();
-  const { id } = useParams();
+  const { code } = useParams();
   const [pets,setPets] = useState([])
   const [sizes,setSizes] = useState([])
   const [ages,setAges] = useState([])
@@ -151,7 +151,7 @@ useEffect(() => {
       
         let {data:{data:responseForm}} = await FormsService.get(dataGet);
 
-        let producRecommended = {name: responseForm.answer, image_id:responseForm.image_id}
+        let producRecommended = {name: responseForm.answer, image_name:responseForm.image_name}
 
         const dataPost = {
             "pet":petName,
@@ -159,7 +159,8 @@ useEffect(() => {
             "age":ageName,
             "necessity":necessityName,
             "answer":responseForm.answer,
-            "client_code": parseInt(id)
+            "client_code": code,
+            "image_name": parseInt(responseForm.image_name)
         };
         
 
@@ -198,7 +199,7 @@ useEffect(() => {
   }
 
 
-  if(!id){
+  if(!code){
     navigate('/');
   }
 
