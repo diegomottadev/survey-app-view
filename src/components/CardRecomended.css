@@ -10,3 +10,11 @@
     left: 50%;
     top: 50%;
 }
+
+@media screen and (max-width: 768px) {
+    .scroll-container {
+      height: 69%;
+      overflow: auto;
+    }
+  }
+  
