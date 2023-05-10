@@ -14,7 +14,7 @@
 /* Extra pequeños dispositivos (teléfonos pequeños, menos de 576px) */
 @media screen and (max-width: 575.98px) {
   .scroll-container {
-    height: 50vh;
+    height: 90vh;
     overflow: auto;
   }
 }
@@ -22,7 +22,7 @@
 /* Pequeños dispositivos (teléfonos, 576px - 767.98px) */
 @media screen and (min-width: 576px) and (max-width: 767.98px) {
   .scroll-container {
-    height: 60vh;
+    height: 90vh;
     overflow: auto;
   }
 }
@@ -30,7 +30,7 @@
 /* Dispositivos medianos (tabletas, 768px - 991.98px) */
 @media screen and (min-width: 768px) and (max-width: 991.98px) {
   .scroll-container {
-    height: 70vh;
+    height: 90vh;
     overflow: auto;
   }
 }
@@ -38,7 +38,7 @@
 /* Dispositivos grandes (laptops y escritorios, 992px - 1199.98px) */
 @media screen and (min-width: 992px) and (max-width: 1199.98px) {
   .scroll-container {
-    height: 80vh;
+    height: 90vh;
     overflow: auto;
   }
 }
