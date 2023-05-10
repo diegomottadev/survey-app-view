@@ -8,3 +8,7 @@ body {
   background-repeat: no-repeat;
 }
 
+::-webkit-scrollbar {
+  height: 16px;
+  width: 16px;
+}

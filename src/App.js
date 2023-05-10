@@ -11,7 +11,7 @@ function App() {
 
   return (
 
-    <MDBContainer breakpoint="sm">
+
 
       <Router>
         <Routes>
@@ -21,7 +21,7 @@ function App() {
           <Route path="/" element={<PageNotExist/>} />
         </Routes>
       </Router>
-    </MDBContainer>
+
 
 
   );
