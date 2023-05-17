@@ -19,6 +19,7 @@ import SurveysService from "../services/SurveysService";
 import FormsService from "../services/FormsService";
 import { useNavigate, useParams } from "react-router-dom";
 import "./CardRecomended.css";
+import ImagePack from "../../src/assets/images/logo-nutrique.png";
 export default function CardWithQuestion() {
   const navigate = useNavigate();
   const { code } = useParams();
@@ -212,44 +213,45 @@ export default function CardWithQuestion() {
   return (
     <MDBContainer breakpoint="sm " style={{'marginTop':'70px'}} >
         <div className="d-flex justify-content-center">
-          <MDBCol size="12">
-            <MDBCard className="scroll-container">
+          <MDBCol size="10">
+            <MDBCard  >
+              <div className="row">
+            <MDBCol size="6" className="side-form">
+            <img
+                      src={ImagePack}
+                    />
+
+                    
+              <span className="text-side">
+              Encuentra el ideal para tu mascota
+              </span>
+              
+            </MDBCol>
+              <MDBCol size="6">
               <form onSubmit={handleSubmit}  action="" >
                 <MDBCardBody>
-                  <div className="text-center">
-                    {/* <MDBIcon
-                      far
-                      icon="file-alt mb-3 text-primary"
-                      size="4x"
-                      style={{ color: "#8C6DEF" }}
-                    /> */}
+                 
 
-                    <p>
-                      Te guiamos para que encuentres el producto ideal para tu
-                      mascota 😊
-                    </p>
-                  </div>
 
-                  <hr />
-
-                  <p className="text-center">
                     <strong>Mascota:</strong>
-                  </p>
-                  {pets.map((pet) => (
+                
+{pets.map((pet) => (
+
+
                     <MDBRadio
                       key={pet.id} // Se recomienda asignar un key único para cada elemento en la lista
                       name="petRating"
                       id={`petRating-${pet.id}`}
                       label={pet.name}
-                      className="mb-2"
+                      className="btn-check mb-2"
                       defaultChecked={pet.name === "Perro"}
                       onChange={() => handleChangePet(pet.id, pet.name)}
                       style={{ borderColor: "#8C6DEF" }}
                     />
                   ))}
-                  <p className="text-center">
+
                     <strong>Edad:</strong>
-                  </p>
+                 
                   {ages.map((age) => (
                     <MDBRadio
                       key={age.id}
@@ -262,9 +264,9 @@ export default function CardWithQuestion() {
                     />
                   ))}
                   {sizes.length > 0 && (
-                    <p className="text-center">
+                  
                       <strong>Tamaño:</strong>
-                    </p>
+                      
                   )}
                   {sizes.length > 0 &&
                     sizes.map((size) => (
@@ -277,10 +279,10 @@ export default function CardWithQuestion() {
                         onChange={() => handleChangeSize(size.id, size.name)}
                         style={{ borderColor: "#8C6DEF" }}
                       />
-                    ))}
-                  <p className="text-center">
+                    ))} 
+                 
                     <strong>Necesidad:</strong>
-                  </p>
+                
                   {necessities.map((necessity) => (
                     <MDBRadio
                       key={necessity.id}
@@ -299,7 +301,7 @@ export default function CardWithQuestion() {
                   <strong>What could we improve?</strong>
                 </p>
                 <MDBTextArea className="mb-4" label='Message' id='textAreaExample' rows={4} /> */}
-                </MDBCardBody>
+                </MDBCardBody>  
                 <MDBCardFooter>
                   <div className="text-end">
                     <MDBBtn
@@ -315,6 +317,8 @@ export default function CardWithQuestion() {
                   </div>
                 </MDBCardFooter>
               </form>
+              </MDBCol>
+              </div>
             </MDBCard>
           </MDBCol>
         </div>

@@ -2,13 +2,17 @@ body {
   font-family: Roboto, Helvetica, Arial, sans-serif;
 }
 .bg-image {
-  background-image: url('assets/images/fondo.png');
+  background-image: url('assets/images/slider-back.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 ::-webkit-scrollbar {
   height: 16px;
   width: 16px;
+}
+html {
+  height: 100%;
 }

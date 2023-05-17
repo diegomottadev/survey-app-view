@@ -1,52 +1,179 @@
 .form-check-input[type=radio]:checked:after {
-    border-radius: 50%;
-    width: 0.625rem;
-    height: 0.625rem;
-    border-color: #8C6DEF !important;
-    background-color: #8C6DEF !important;
-    transition: border-color;
-    transform: translate(-50%, -50%);
-    position: absolute;
-    left: 50%;
-    top: 50%;
+  border-radius: 50%;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-color: #8C6DEF !important;
+  background-color: #8C6DEF !important;
+  transition: border-color;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  left: 50%;
+  top: 50%;
+}
+.side-form {
+background: linear-gradient(180deg, #634AB1 0%, #472F92 100%);
+border-radius: 10px;
+padding: 110px 100px !important;
+text-align: center;
+}
+
+
+.side-rec{
+background: linear-gradient(180deg, #634AB1 0%, #472F92 100%);
+border-radius: 10px;
+text-align: center;
+}
+.box-prod {
+background-color: #ffffff;
+border-radius: 10px;
+padding: 20px 0px;
+}
+
+.side-form .text-side {
+font-size: 26px;
+color: #ffffff;
+display: block;
+margin-top: 40px;
+  font-weight: 500;
+}
+.side-form img {
+width: 300px;
+
+}
+
+.card-body strong {
+padding-top: 10px !important;
+display: block;
+padding-bottom: 4px;
+}
+h3 strong {
+font-size: 26px;
+}
+.right-form .card-body strong {
+color: #333333;
+font-size: 20px;
+}
+
+.right-form .form-outline {
+position: relative;
+margin-top: 14px;
 }
 
 /* Extra pequeños dispositivos (teléfonos pequeños, menos de 576px) */
 @media screen and (max-width: 575.98px) {
-  .scroll-container {
-    height: 80vh;
-    overflow: auto;
-  }
+.scroll-container {
+  height: 80vh;
+  overflow: auto;
+}
 }
 
 /* Pequeños dispositivos (teléfonos, 576px - 767.98px) */
 @media screen and (min-width: 576px) and (max-width: 767.98px) {
-  .scroll-container {
-    height: 80vh;
-    overflow: auto;
-  }
+.scroll-container {
+  height: 80vh;
+  overflow: auto;
+}
+
+.col-6 {
+flex: 0 0 auto;
+width: 100% !important;
+}
+
+
 }
 
 /* Dispositivos medianos (tabletas, 768px - 991.98px) */
 @media screen and (min-width: 768px) and (max-width: 991.98px) {
-  .scroll-container {
-    height:80vh;
-    overflow: auto;
-  }
+.scroll-container {
+  height:80vh;
+  overflow: auto;
+}
+
 }
 
 /* Dispositivos grandes (laptops y escritorios, 992px - 1199.98px) */
 @media screen and (min-width: 992px) and (max-width: 1199.98px) {
-  .scroll-container {
-    height: 80vh;
-    overflow: auto;
-  }
+.scroll-container {
+  height: 80vh;
+  overflow: auto;
+}
 }
 
 /* Dispositivos extra grandes (escritorios grandes y pantallas más grandes, 1200px en adelante) */
 @media screen and (min-width: 1200px) {
-  .scroll-container {
-    height: 90vh;
-    overflow: auto;
-  }
+.scroll-container {
+  height: 90vh;
+  overflow: auto;
 }
+}
+
+/* Dispositivos menores a Desktop */
+@media screen and (max-width: 991.98px) {
+
+img.img-fluid.mx-auto.d-block.img-recomended {
+  width: 100%;
+}
+
+.right-form img {
+width: 150px;
+}
+
+
+.col-6 {
+  flex: inherit;
+  width: 100% !important;
+}
+.side-form img {
+width: 160px;
+}
+.side-form {
+
+padding: 20px 30px !important;
+}
+
+.side-form .text-side {
+font-size: 18px;
+margin-top: 10px;
+}
+
+#root .container-sm{
+margin-bottom: 40px !important;
+margin-top: 40px !important;
+}
+
+}
+
+#root .container-sm {
+margin-bottom: 70px;
+}
+
+
+.bg-image {
+overflow: initial !important;
+}
+
+
+.img-recomended {
+max-width: 400px !important;
+margin: 30px 0px;
+}
+
+
+.right-form .form-outline {
+
+margin-top: 14px;
+}
+
+.col-6.right-form {
+padding-bottom: 30px;
+padding-top: 30px;
+}
+
+.side-rec p {
+color: #ffffff;
+}
+
+.right-form img {
+margin-bottom: 20px;
+}
+
