@@ -8,6 +8,7 @@ import {
   MDBContainer,
   MDBIcon,
   MDBRadio,
+  MDBSpinner,
 
 } from "mdb-react-ui-kit";
 import PetsService from "../services/PetsService";
@@ -198,7 +199,11 @@ export default function CardWithQuestion() {
   };
 
   if (pets && pets.length === 0) {
-    return <div>Cargando...</div>;
+    return   <div className='d-flex justify-content-center  align-items-center' style={{height: '100vh'}}>
+              <MDBSpinner role='status'>
+                <span className='visually-hidden'></span>
+              </MDBSpinner>
+            </div>;
   }
 
   /**
