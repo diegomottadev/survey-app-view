@@ -56,7 +56,7 @@ export default function CardRecomended(props) {
   return (
 
       <MDBContainer breakpoint="sm">
-        <div className="d-flex justify-content-center" style={{'marginTop':'70px'}} >
+        <div className="d-flex justify-content-center" style={{'marginTop':'10px'}} >
         <MDBCol size="10"><MDBCard>
           <div className="row">
           <MDBCol size="6" className="side-rec">

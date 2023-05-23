@@ -110,6 +110,31 @@ width: 100% !important;
 /* Dispositivos menores a Desktop */
 @media screen and (max-width: 991.98px) {
 
+  .img-recomended {
+    margin: 0px 0px !important;
+}
+.box-prod h3 strong {
+  font-size: 18px !important;
+}
+
+ .right-form .card-body strong {
+  color: #333333;
+  font-size: 16px;
+  line-height: 20px;
+  padding-top: 0px !important;
+}
+.box-prod {
+  padding: 10px 0px;
+}
+  #root .container-sm {
+    margin-bottom: 10px !important;
+    margin-top: 10px !important;
+}
+.col-6.right-form {
+  padding-bottom: 0px !important;
+  padding-top: 0px !important;
+}
+
 img.img-fluid.mx-auto.d-block.img-recomended {
   width: 100%;
 }
@@ -134,11 +159,6 @@ padding: 20px 30px !important;
 .side-form .text-side {
 font-size: 18px;
 margin-top: 10px;
-}
-
-#root .container-sm{
-margin-bottom: 40px !important;
-margin-top: 40px !important;
 }
 
 }
